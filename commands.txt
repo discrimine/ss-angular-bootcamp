@@ -1,0 +1,4 @@
+ng g m route --routing
+ng g c landing
+npm install bootstrap --save
+ng serve --open
