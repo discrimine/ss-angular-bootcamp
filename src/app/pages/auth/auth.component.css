@@ -1,0 +1,18 @@
+section.auth{
+    max-width: 200px;
+    margin: 0 auto;
+}
+.auth-inp{
+    margin: 20px 0;
+}
+.auth_btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.auth_btns a{
+    width: 45%;
+}
+.auth_btn{
+    width: 100%;
+}
