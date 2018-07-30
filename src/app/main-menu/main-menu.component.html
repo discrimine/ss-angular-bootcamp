@@ -5,7 +5,7 @@
       <a class="nav-link" routerLink="/landing">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/auth">Auth</a>
+        <a class="nav-link" ngDefaultControl [(ngModel)]="isAuth" routerLink="{{ isAuth }}">{{isAuth}}</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" routerLink="/contacts">Contacts</a>

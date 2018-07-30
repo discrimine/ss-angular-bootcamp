@@ -9,16 +9,18 @@ import { Clients } from '../../data/clients-info';
 
 export class AuthComponent implements OnInit {
 
+  user: boolean;
+
+  constructor() { }
+
   client: Clients = {
     id: 1,
     name: 'jack'
   }
 
-  auth():void{
-    console.log('success');
+  auth(userName):void{
+   
   }
-
-  constructor() { }
 
   ngOnInit() {
   }
