@@ -19,7 +19,7 @@ export class MainMenuComponent implements OnInit {
     if (this.isAuthService.isAuthdUser()){
       this.isAuth = 'Dashboard'; 
     }else{
-      this.isAuth = 'Auth'
+      this.isAuth = 'Sign in'
     }
   }
 

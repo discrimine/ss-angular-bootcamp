@@ -1,0 +1,10 @@
+header{
+    background-image: url(../../assets/main.jpg);
+    background-position: center;
+    height: 500px;
+    width: 1000vw;
+}
+.content{
+    max-width: 1140px;
+    margin: 40px auto;
+}
