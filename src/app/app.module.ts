@@ -17,6 +17,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { HeaderComponent } from './structure/header/header.component';
 import { FooterComponent } from './structure/footer/footer.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     HeaderComponent,
     FooterComponent,
     SignupComponent,
+    DashboardComponent,
   ],
   imports: [
     FormsModule,
