@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'contacts', component: ContactsComponent },
   { path: 'Dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'landing' }
+
 ];
 
 @NgModule({

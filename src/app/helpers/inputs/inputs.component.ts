@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class InputsComponent implements OnInit {
 
   @Input() public lblName: string;
+  @Input() public inpType: string;
+  @Input() public inpId: string;
 
   constructor() { }
 
