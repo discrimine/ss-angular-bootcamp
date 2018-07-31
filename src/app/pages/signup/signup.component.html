@@ -1,18 +1,28 @@
-<h1 align='center'>Signup for free :)</h1>
+<section class="auth">
+<h1 align='center'>Sign up</h1>
+  <app-inputs [lblName]="lblName"></app-inputs>
   <div class="form-group">
-    <label for="name">Name</label>
-    <input [class.valid]="validName === false" type="text" class="form-control" #name>
+    <label for="lastName">Last Name:</label>
+    <input type="text" class="form-control" #lastName>
   </div>
   <div class="form-group">
-    <label for="login">Login:</label>
-    <input [class.valid]="validLogin === false" type="text" class="form-control" #login>
+    <label for="role">Select list:</label>
+    <select class="form-control" #role>
+      <option>Doctor</option>
+      <option>Patient</option>
+      <option>Admin</option>
+    </select>
   </div>
   <div class="form-group">
-    <label for="email">Email address:</label>
+    <label for="email">Email:</label>
     <input type="email" [class.valid]="validEmail === false" class="form-control" #email>
   </div>
   <div class="form-group">
     <label for="pwd">Password:</label>
     <input type="password" [class.valid]="validPwd === false" class="form-control" #pwd>
   </div>
-  <button class="btn btn-success" (click)="signUp(name, login, email, pwd)" >Sign up!</button>
+  <div class="auth_btns">  
+    <button class="btn btn-success" (click)="signUp(firstName, lastName, role, email, pwd)" >Sign up!</button>
+    <button class="btn btn-info" routerLink="/Sign in" >Sign in</button>
+  </div>
+  </section>
