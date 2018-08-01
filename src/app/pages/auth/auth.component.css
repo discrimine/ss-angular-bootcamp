@@ -16,3 +16,11 @@ section.auth{
 .auth_btn{
     width: 100%;
 }
+.valid{
+    border-color: red;
+}
+.validate{
+    color: red;
+    margin-top: 20px;
+    text-align: center;
+}

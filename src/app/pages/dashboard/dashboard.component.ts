@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IsAuthService } from '../../services/is-auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private isAuthService: IsAuthService) { }
+  authdUser;
+  userName: string;
+  isUserAuth = this.isAuthService.isAuth();
+ 
+    
 
   ngOnInit() {
+    if ( this.isUserAuth ){
+      this.authdUser = JSON.parse(localStorage.getItem("user"));
+      this.userName = this.authdUser.firstName;
+      }
   }
 
 }

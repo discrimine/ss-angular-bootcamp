@@ -28,4 +28,6 @@
     <button class="btn btn-success" (click)="signUp(firstName, lastName, role, email, pwd)" >Sign up!</button>
     <button class="btn btn-info" routerLink="/Sign in" >Sign in</button>
   </div>
+  <div class="validate">{{ isValid }}</div>
+  <div *ngIf="isSuccess" class="success"> Successfully registered. Now u may <a routerLink="/Sign in">sign in</a> </div>
   </section>

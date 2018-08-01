@@ -1,3 +1,17 @@
-<p>
-  dashboard works!
-</p>
+<div class="content">
+    <h2 align="center">Hi {{ userName | uppercase }} ! it's your dashboard</h2>
+    <section class="auth"> 
+        <div class="form-group">
+            <label for="firstName">First name:</label>
+            <input type="text" class="form-control" #firstName>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last name:</label>
+            <input type="text" class="form-control" #lastName>
+        </div>
+        <div class="auth_btns">
+            <button (click)="changeInfo(firstName)" class="btn btn-success auth_btn">Change info</button>
+        </div>
+        <div class="validate">{{ isValid }}</div>
+    </section>  
+</div>    

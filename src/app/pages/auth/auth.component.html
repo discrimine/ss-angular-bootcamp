@@ -1,12 +1,19 @@
 <div class="content">
   <section *ngIf="!user" class="auth"> 
     <h2>Authorization</h2>
-    <input class="form-control auth-inp" placeholder="name" #userName>
-    <input class="form-control auth-inp" placeholder="password">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" [class.valid]="validEmail === false" class="form-control" #email>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" [class.valid]="validPwd === false" class="form-control" #pwd>
+    </div>
     <div class="auth_btns">
-      <a (click)="auth(userName)" href="javascript:void(0)"><button class="btn btn-success auth_btn">Sign in</button></a>
+      <a (click)="signIp(email, pwd)" href="javascript:void(0)"><button class="btn btn-success auth_btn">Sign in</button></a>
       <a routerLink="/signup"><button class="btn btn-info auth_btn">Sign up</button></a>
     </div>
+    <div class="validate">{{ isValid }}</div>
   </section>  
   <section *ngIf="user">
     complete
