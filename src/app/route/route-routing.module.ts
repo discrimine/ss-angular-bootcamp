@@ -7,17 +7,19 @@ import { AuthComponent } from '../pages/auth/auth.component';
 import { ContactsComponent } from '../pages/contacts/contacts.component';
 import { SignupComponent } from '../pages/signup/signup.component';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
+import { LogoutComponent } from '../helpers/logout/logout.component'
 
-import { AuthGuard } from '../auth.guard';
+import { IsAuthGuard } from '../guards/is-auth.guard';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: 'landing', component: LandingComponent },
-  { path: 'Sign in', component: AuthComponent },
+  { path: 'Sign in', component: AuthComponent, canActivate: [IsAuthGuard] },
   { path: 'signup', component: SignupComponent },
   { path: 'contacts', component: ContactsComponent },
-  { path: 'Dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'Log out', component: LogoutComponent},
   { path: '**', redirectTo: 'landing' }
 
 ];
@@ -26,6 +28,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   bootstrap: [AppComponent],
-  providers: [AuthGuard]
+  providers: [IsAuthGuard]
 })
 export class RouteRoutingModule { }
