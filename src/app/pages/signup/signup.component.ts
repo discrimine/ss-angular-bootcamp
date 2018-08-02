@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+
+import { IndexedDbService } from '../../services/indexed-db.service';
+import { allResolved } from 'q';
 
 @Component({
   selector: 'app-signup',
@@ -28,6 +35,6 @@ export class SignupComponent implements OnInit {
   };
 
   ngOnInit() {
+    
   }
-
 }

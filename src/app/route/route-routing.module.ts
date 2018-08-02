@@ -14,6 +14,7 @@ import { IsAuthGuard } from '../guards/is-auth.guard';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: 'landing', component: LandingComponent },
   { path: 'signin', component: AuthComponent, canActivate: [IsAuthGuard] },
   { path: 'signup', component: SignupComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [IsAuthGuard]
 })
 export class RouteRoutingModule { }
