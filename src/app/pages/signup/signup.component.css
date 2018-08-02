@@ -1,0 +1,12 @@
+section.auth{
+    max-width: 200px;
+    margin: 0 auto;
+}
+.auth_btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.valid{
+    border-color: red;
+}

@@ -16,3 +16,6 @@ section.auth{
 .auth_btn{
     width: 100%;
 }
+.valid{
+    border-color: red;
+}
