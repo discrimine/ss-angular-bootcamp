@@ -1,6 +1,9 @@
 <section class="auth">
 <h1 align='center'>Sign up</h1>
-  <app-inputs [lblName]="lblName"></app-inputs>
+  <div class="form-group">
+    <label for="dirstName">First Name:</label>
+    <input type="text" class="form-control" #firstName>
+  </div>
   <div class="form-group">
     <label for="lastName">Last Name:</label>
     <input type="text" class="form-control" #lastName>

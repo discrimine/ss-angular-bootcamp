@@ -18,6 +18,7 @@ import { FooterComponent } from './structure/footer/footer.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InputsComponent } from './helpers/inputs/inputs.component';
+import { LogoutComponent } from './helpers/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { InputsComponent } from './helpers/inputs/inputs.component';
     SignupComponent,
     DashboardComponent,
     InputsComponent,
+    LogoutComponent,
   ],
   imports: [
     FormsModule,
