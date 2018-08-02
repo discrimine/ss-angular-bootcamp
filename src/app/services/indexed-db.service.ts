@@ -113,29 +113,32 @@ export class IndexedDbService implements IDataProviderService {
     });
   }
 
-getLastId() {
-  let DBOpenRequest = indexedDB.open("MyDataBase", 1);
-  DBOpenRequest.onsuccess = function(event) {
-    let db = DBOpenRequest.result;
-    var transaction = db.transaction(["users"], "readwrite");
-    let objectStore = transaction.objectStore("users");
-    let objectStoreRequest = objectStore.getAll();
-    objectStoreRequest.onsuccess = function(event) {
-      let myRecord = objectStoreRequest.result;
-      let lastId = (myRecord.slice(-1)[0]);
-      console.log(lastId.id);
-    };
-  };
-}
-
   public addObject(name: string, object: any): Promise<any> {
+    let lastId = 0;
     return new Promise((resolve, reject) => {
       this.performOperationWithStore(name, function (tx, store) {
-        store.put({ id: Math.floor(Math.random() * (1000 - 1)) + 1, obj: object });
-        resolve();
+        const cursorRequest = store.openCursor();
+        cursorRequest.onerror = function (error) {
+          reject(error);
+        };
+        cursorRequest.onsuccess = function (evt) {
+          const cursor = evt.target.result;
+          if (cursor) {
+            if (cursor.key > lastId) {
+              lastId = cursor.key;
+            }
+            cursor.continue();
+          } else {
+            object.id = ++lastId;
+            store.put({ id: object.id, obj: object });
+            resolve(object);
+            resolve(lastId);
+          }
+        };
       });
     });
   }
+  
 }
 
 @Injectable({

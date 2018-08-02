@@ -13,6 +13,7 @@ export class DantistListComponent implements OnInit {
   ngOnInit() {
     this.userService.getItems().then(function(items){
       this.dentists = items;
+      console.log(items)
     });
   }
 }
