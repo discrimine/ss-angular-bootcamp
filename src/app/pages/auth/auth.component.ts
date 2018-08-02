@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { IndexedDbService } from '../../services/indexed-db.service'
+import { Clients } from '../../data/clients-info';
 
 @Component({
   selector: 'app-auth',
@@ -19,9 +17,9 @@ export class AuthComponent implements OnInit {
   validPwd: boolean = true;
   isValid: string;
 
-  signIp(email, pwd):void{
-    email.value.match('^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$') ? this.validEmail = true : this.validEmail = false;
-    pwd.value == '' ? this.validPwd = false : this.validPwd = true;
+  auth():void{
+    console.log('success');
+  }
 
     if (this.validEmail == true || this.validPwd == true){
       this.dbService.getItems("users").then(function(Response){
