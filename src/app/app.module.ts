@@ -19,10 +19,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InputsComponent } from './helpers/inputs/inputs.component';
 import { LogoutComponent } from './helpers/logout/logout.component';
-<<<<<<< HEAD
 import { DantistListComponent } from './pages/dantist-list/dantist-list.component';
-=======
->>>>>>> 0bbb1f44a4d6fd8db1252abac252f133f7372b74
 
 @NgModule({
   declarations: [
@@ -38,10 +35,7 @@ import { DantistListComponent } from './pages/dantist-list/dantist-list.componen
     DashboardComponent,
     InputsComponent,
     LogoutComponent,
-<<<<<<< HEAD
     DantistListComponent,
-=======
->>>>>>> 0bbb1f44a4d6fd8db1252abac252f133f7372b74
   ],
   imports: [
     FormsModule,
