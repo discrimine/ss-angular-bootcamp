@@ -1,31 +1,3 @@
-<section class="auth">
-<h1 align='center'>Sign up</h1>
-  <div class="form-group">
-    <label for="dirstName">First Name:</label>
-    <input type="text" class="form-control" #firstName>
-  </div>
-  <div class="form-group">
-    <label for="lastName">Last Name:</label>
-    <input type="text" class="form-control" #lastName>
-  </div>
-  <div class="form-group">
-    <label for="role">Select list:</label>
-    <select class="form-control" #role>
-      <option>Doctor</option>
-      <option>Patient</option>
-      <option>Admin</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" [class.valid]="validEmail === false" class="form-control" #email>
-  </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" [class.valid]="validPwd === false" class="form-control" #pwd>
-  </div>
-  <div class="auth_btns">  
-    <button class="btn btn-success" (click)="signUp(firstName, lastName, role, email, pwd)" >Sign up!</button>
-    <button class="btn btn-info" routerLink="/Sign in" >Sign in</button>
-  </div>
-  </section>
+<p>
+  signup works!
+</p>

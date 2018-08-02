@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { IndexedDbService } from '../../services/indexed-db.service'
+import { Clients } from '../../data/clients-info';
 
 @Component({
   selector: 'app-auth',
@@ -11,32 +9,16 @@ import { IndexedDbService } from '../../services/indexed-db.service'
 
 export class AuthComponent implements OnInit {
 
-  user: boolean;
+  client: Clients = {
+    id: 1,
+    name: 'jack'
+  }
 
-  constructor( private dbService: IndexedDbService, private router: Router ) { }
+  auth():void{
+    console.log('success');
+  }
 
-  validEmail: boolean = true;
-  validPwd: boolean = true;
-
-  signIp(email, pwd):void{
-    email.value.match('^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$') ? this.validEmail = true : this.validEmail = false;
-    pwd.value == '' ? this.validPwd = false : this.validPwd = true;
-
-    if (this.validEmail == true || this.validPwd == true){
-      let z = this.dbService.getItems("users").then(function(Response){
-        for( let i = 0; i <= Response.length-1; i++){
-          if (Response[i].email == email.value && Response[i].pwd == pwd.value){
-            localStorage.setItem('user' , JSON.stringify(Response[i]));
-            window.location.reload();
-          }else{
-            console.log('incorect')
-          }
-         
-        }
-      });
-    }
-    
-  };
+  constructor() { }
 
   ngOnInit() {
   }

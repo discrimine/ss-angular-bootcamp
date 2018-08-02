@@ -1,27 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { IsAuthService } from '../services/is-auth.service';
 
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
-  styleUrls: ['./main-menu.component.css'],
-  providers: [ ]
+  styleUrls: ['./main-menu.component.css']
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor( private isAuthService: IsAuthService ) { }
-
-  isAuth = this.isAuthService.isAuth()
-
-  dashboard = (this.isAuth) ? 'Log out' : 'Sign in';
-
-  
- 
+  constructor() { }
 
   ngOnInit() {
-    console.log(this.isAuth);
-    
   }
 
 }
