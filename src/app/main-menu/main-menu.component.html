@@ -5,7 +5,14 @@
       <a class="nav-link" routerLink="/landing">Home</a>
     </li>
     <li class="nav-item">
+<<<<<<< HEAD
         <a class="nav-link" routerLink="{{isUserAuth}}">{{isUserAuth | titlecase}}</a>
+=======
+        <a class="nav-link" ngDefaultControl routerLink="{{dashboard}}">{{dashboard}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" *ngIf="isAuth == true;" routerLink="/dashboard">Dashboard</a>
+>>>>>>> 0bbb1f44a4d6fd8db1252abac252f133f7372b74
     </li>
     <li class="nav-item">
       <a class="nav-link" *ngIf="isAuth == true;" routerLink="/dashboard">Dashboard</a>

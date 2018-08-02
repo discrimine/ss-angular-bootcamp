@@ -18,9 +18,12 @@ section.auth{
 }
 .valid{
     border-color: red;
+<<<<<<< HEAD
 }
 .validate{
     color: red;
     margin-top: 20px;
     text-align: center;
+=======
+>>>>>>> 0bbb1f44a4d6fd8db1252abac252f133f7372b74
 }

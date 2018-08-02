@@ -13,10 +13,22 @@ export class MainMenuComponent implements OnInit {
   constructor( private isAuthService: IsAuthService ) { }
 
   isAuth = this.isAuthService.isAuth()
+<<<<<<< HEAD
   isUserAuth = (this.isAuth) ? 'logout' : 'signin';
 
   ngOnInit() {
     console.log(this.isAuth);
+=======
+
+  dashboard = (this.isAuth) ? 'Log out' : 'Sign in';
+
+  
+ 
+
+  ngOnInit() {
+    console.log(this.isAuth);
+    
+>>>>>>> 0bbb1f44a4d6fd8db1252abac252f133f7372b74
   }
 
 }
