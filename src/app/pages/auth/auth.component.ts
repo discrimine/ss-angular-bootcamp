@@ -17,42 +17,24 @@ export class AuthComponent implements OnInit {
 
   validEmail: boolean = true;
   validPwd: boolean = true;
-<<<<<<< HEAD
   isValid: string;
-=======
->>>>>>> 0bbb1f44a4d6fd8db1252abac252f133f7372b74
 
   signIp(email, pwd):void{
     email.value.match('^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$') ? this.validEmail = true : this.validEmail = false;
     pwd.value == '' ? this.validPwd = false : this.validPwd = true;
 
     if (this.validEmail == true || this.validPwd == true){
-<<<<<<< HEAD
       this.dbService.getItems("users").then(function(Response){
-=======
-      let z = this.dbService.getItems("users").then(function(Response){
->>>>>>> 0bbb1f44a4d6fd8db1252abac252f133f7372b74
         for( let i = 0; i <= Response.length-1; i++){
           if (Response[i].email == email.value && Response[i].pwd == pwd.value){
             localStorage.setItem('user' , JSON.stringify(Response[i]));
             window.location.reload();
-<<<<<<< HEAD
           }
         }
       });
     }else{
       this.isValid='User not found';
     }
-=======
-          }else{
-            console.log('incorect')
-          }
-         
-        }
-      });
-    }
-    
->>>>>>> 0bbb1f44a4d6fd8db1252abac252f133f7372b74
   };
 
   ngOnInit() {

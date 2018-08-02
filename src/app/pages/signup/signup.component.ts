@@ -19,12 +19,8 @@ export class SignupComponent implements OnInit {
   validEmail: boolean = true;
   validPwd: boolean = true;
 
-<<<<<<< HEAD
   isValid: string;
   isSuccess: boolean = false;
-=======
-  r = [];
->>>>>>> 0bbb1f44a4d6fd8db1252abac252f133f7372b74
 
   signUp(firstName, lastName, role, email, pwd):void{
     email.value.match('^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$') ? this.validEmail = true : this.validEmail = false;
@@ -32,12 +28,9 @@ export class SignupComponent implements OnInit {
 
     if (this.validEmail == true || this.validPwd == true){
       this.dbService.addObject("users", { firstName: firstName.value, lastName: lastName.value, role: role.value, email: email.value, pwd: pwd.value});
-<<<<<<< HEAD
       this.isSuccess = true;
     }else{
       this.isValid = 'Something wrong';
-=======
->>>>>>> 0bbb1f44a4d6fd8db1252abac252f133f7372b74
     }
   };
 
