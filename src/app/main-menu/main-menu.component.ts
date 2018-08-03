@@ -16,7 +16,7 @@ export class MainMenuComponent implements OnInit {
   isUserAuth = (this.isAuth) ? 'logout' : 'signin';
 
   ngOnInit() {
-    console.log(this.isAuth);
+
   }
 
 }

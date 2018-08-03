@@ -176,7 +176,7 @@ export abstract class BaseDataService<T extends BaseModel> {
 })
 export class UserService extends BaseDataService<UserModel> {
   constructor(protected dataProviderService: IndexedDbService) {
-    super('users', dataProviderService);
+    super('MyDataBase', dataProviderService);
   }
 }
 
@@ -195,7 +195,11 @@ export class BaseModel {
 }
 
 export class UserModel extends BaseModel {
-  name: string;
+  firstName: string;
+  lastName: string;
+  role: string;
+  email: string;
+  password: string;
 }
 
 export class DantistModel extends BaseModel {

@@ -17,23 +17,24 @@ export class AuthComponent implements OnInit {
 
   validEmail: boolean = true;
   validPwd: boolean = true;
-  isValid: string;
 
   signIp(email, pwd):void{
-    email.value.match('^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$') ? this.validEmail = true : this.validEmail = false;
+    email.value =='' ? this.validEmail = false : this.validEmail = true;
     pwd.value == '' ? this.validPwd = false : this.validPwd = true;
 
     if (this.validEmail == true || this.validPwd == true){
       this.dbService.getItems("users").then(function(Response){
-        for( let i = 0; i <= Response.length-1; i++){
-          if (Response[i].email == email.value && Response[i].pwd == pwd.value){
+        for( let i = 0; i < Response.length; i++){
+          if (Response[i].email == email.value && Response[i].password == pwd.value){
             localStorage.setItem('user' , JSON.stringify(Response[i]));
             window.location.reload();
+          }else{
+            console.log('notFound');
           }
         }
       });
     }else{
-      this.isValid='User not found';
+      
     }
   };
 

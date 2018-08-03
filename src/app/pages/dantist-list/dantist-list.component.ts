@@ -11,9 +11,9 @@ export class DantistListComponent implements OnInit {
   constructor(private userService: UserService) { }
   dentists: UserModel[];
   ngOnInit() {
-    this.userService.getItems().then(function(items){
-      this.dentists = items;
-      console.log(items)
-    });
+    //  this.userService.getItems().then(function(items){
+    //    this.dentists = items;
+    //    console.log(items)
+    //  });
   }
 }

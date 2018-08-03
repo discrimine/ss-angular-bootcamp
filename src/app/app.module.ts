@@ -7,7 +7,7 @@ import { LandingComponent } from './landing/landing.component';
 import { RouteRoutingModule } from './route/route-routing.module';
 import { RouterModule } from '../../node_modules/@angular/router';
 
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AuthComponent } from './pages/auth/auth.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -41,6 +41,7 @@ import { DantistListComponent } from './pages/dantist-list/dantist-list.componen
     FormsModule,
     BrowserModule,
     RouteRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

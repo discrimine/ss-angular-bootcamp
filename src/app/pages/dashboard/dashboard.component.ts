@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IsAuthService } from '../../services/is-auth.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,16 +10,12 @@ import { IsAuthService } from '../../services/is-auth.service';
 export class DashboardComponent implements OnInit {
 
   constructor(private isAuthService: IsAuthService) { }
-  authdUser;
-  userName: string;
+  user;
   isUserAuth = this.isAuthService.isAuth();
  
-    
-
   ngOnInit() {
     if ( this.isUserAuth ){
-      this.authdUser = JSON.parse(localStorage.getItem("user"));
-      this.userName = this.authdUser.firstName;
+      this.user = JSON.parse(localStorage.getItem("user"));
       }
   }
 
